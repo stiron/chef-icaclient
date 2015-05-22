@@ -10,7 +10,7 @@ Chef cookbook that installs and configures the [ICAClient](https://www.citrix.co
 * [Citrix ICAClient](https://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-131.html)
 * [Chef](http://chef.io)
 
-Tested with **Chef 13**, **Ubuntu 14.04** and **ICAClient 13.1**
+Tested with **Chef Client 12.3.0**, **Ubuntu 14.04** and **ICAClient 13.1**
 
 This cookbook can be run on virtual machine as well.
 
@@ -19,6 +19,10 @@ This cookbook can be run on virtual machine as well.
 ### default
 
 The default recipe installs the ICAClient, and configures it with Firefox
+
+### cleanup
+
+The cleanup recipe removes the deb file from the client, and empties the apt cache
 
 ## Usage
 
@@ -32,6 +36,14 @@ deb_file = 'icaclient_13.1.0.285639_amd64.deb'
 (...)
 ```
 * Add the recipe to your run list
+```
+{
+  "run_list": [
+    "recipe[icaclient]",
+    "recipe[icaclient::cleanup]"
+  ]
+}
+```
 * Wait for a Chef client run
 
 ## Contributing
@@ -48,7 +60,9 @@ Author: Tamas Molnar
 
 Copyright 2015, Tamas Molnar.
 
-Licensed under the Apache License, Version 2.0 (the "License");
+Licensed under the Apache License, Version 2.0 (the "License")### cleanup
+
+The cleanup recipe removes the deb file from the client, and empties the apt cache;
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
