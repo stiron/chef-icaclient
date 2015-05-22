@@ -16,6 +16,7 @@
 # limitations under the License.
 
 deb_file = node['icaclient']['deb_file']
+install_deps = default['icaclient']['install_deps'] 
 
 execute 'add-architecture' do
   command 'dpkg --add-architecture i386'
@@ -26,25 +27,6 @@ execute 'update-apt-cache' do
   command 'apt-get -y -q update'
   not_if 'dpkg -l icaclient'
 end
-
-install_deps = %W(
-  libxerces-c3.1
-  libwebkitgtk-1.0-0
-  libc6:i386
-  libstdc++6:i386
-  libgtk2.0-0:i386
-  libxext6:i386
-  libxmu6:i386
-  libxpm4:i386
-  libasound2:i386
-  libx11-6:i386
-  libice6:i386
-  libsm6:i386
-  libspeex1:i386
-  libvorbis0a:i386
-  libvorbisenc2:i386
-  libcanberra-gtk-module:i386
-)
 
 install_deps.each do |pkg|
   package pkg

@@ -16,3 +16,21 @@
 # limitations under the License.
 
 default['icaclient']['deb_file'] = 'icaclient_13.1.0.285639_amd64.deb'
+default['icaclient']['install_deps'] = %W(
+  libxerces-c3.1
+  libwebkitgtk-1.0-0
+  libc6:i386
+  libstdc++6:i386
+  libgtk2.0-0:i386
+  libxext6:i386
+  libxmu6:i386
+  libxpm4:i386
+  libasound2:i386
+  libx11-6:i386
+  libice6:i386
+  libsm6:i386
+  libspeex1:i386
+  libvorbis0a:i386
+  libvorbisenc2:i386
+  libcanberra-gtk-module:i386
+)
