@@ -28,11 +28,11 @@ The cleanup recipe removes the deb file from the client, and empties the apt cac
 
 * Download the current ICAClient installer deb
 * Put the deb file in the `files/` directory
-* Set the `deb_file` variable in the `default.rb` file, eg:
+* Set the `default['icaclient']['deb_file']` variable in the `attributes/default.rb` file, eg:
 ```
-# default.rb
+# attributes/default.rb
 (...)
-deb_file = 'icaclient_13.1.0.285639_amd64.deb'
+default['icaclient']['deb_file'] = 'icaclient_13.1.0.285639_amd64.deb'
 (...)
 ```
 * Add the recipe to your run list
