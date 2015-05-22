@@ -1,0 +1,7 @@
+name             'icaclient'
+maintainer       'Tamas Molnar'
+maintainer_email 'stiron@gmail.com'
+license          'apache2'
+description      'Installs/Configures Citrix ICAClient'
+long_description 'Installs/Configures Citrix ICAClient'
+version          '0.1.0'
