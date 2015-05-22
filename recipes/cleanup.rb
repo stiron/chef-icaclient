@@ -15,7 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-deb_file = 'icaclient_13.1.0.285639_amd64.deb'
+deb_file = node['icaclient']['deb_file']
 
 file "/tmp/#{deb_file}" do
   action :delete
