@@ -30,6 +30,7 @@ end
 
 install_deps.each do |pkg|
   package pkg
+  options '--force-yes'
 end
 
 cookbook_file "/tmp/#{deb_file}" do
