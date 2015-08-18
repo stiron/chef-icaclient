@@ -16,7 +16,7 @@
 # limitations under the License.
 
 deb_file = node['icaclient']['deb_file']
-install_deps = default['icaclient']['install_deps'] 
+install_deps = node['icaclient']['install_deps']
 
 execute 'add-architecture' do
   command 'dpkg --add-architecture i386'
