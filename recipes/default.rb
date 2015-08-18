@@ -29,7 +29,10 @@ execute 'update-apt-cache' do
 end
 
 install_deps.each do |pkg|
-  package pkg
+  package pkg do
+    action :install
+    options '--force-yes'
+  end
 end
 
 cookbook_file "/tmp/#{deb_file}" do
